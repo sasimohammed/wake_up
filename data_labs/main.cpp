@@ -1,6 +1,7 @@
 #include <iostream>
 #include <stack>
-
+#include<vector>
+#include<algorithm>
 using namespace std;
 
 template<typename T>
@@ -154,6 +155,38 @@ public:
 
 
 };
+
+void  count_sort(vector<int>&arr){
+    long long max_elem=*max_element(arr.begin(),arr.end());
+
+    vector<int>freq(max_elem+1,0);
+
+    vector<long long >out(arr.size());
+    for(int i : arr){
+        freq[i]++;
+    }
+    for(int i=1;i<=max_elem;i++){
+        freq[i]=freq[i]+freq[i-1];
+    }
+    for(int i=arr.size()-1;i>=0;i--){
+        out[freq[arr[i]]-1]=arr[i];
+        freq[arr[i]]--;
+
+
+    }
+
+    for(auto i:out){
+        cout<<i<<" ";
+
+    }
+
+cout<<endl;
+
+
+
+}
+
+
 
 
 template<typename T>
@@ -317,13 +350,17 @@ int main() {
 //    s.insert(3);
 //s.insert_back(5);
 
-string infix;
-cin>>infix;
-string h=infix_postfix(infix);
+//string infix;
+//cin>>infix;
+//string h=infix_postfix(infix);
+//
+//
+//
+//cout<<value(h);
+int arr[5]={2,2,7,0};
+vector<int>ar={2,2,2,2,40,3,0,0,0,0,1,1,7,0};
+    count_sort(ar);
 
-
-
-cout<<value(h);
 
 //circular_queue<int>q(5);
 //    q.enqueue(10);
