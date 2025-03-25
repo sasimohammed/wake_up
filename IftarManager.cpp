@@ -81,18 +81,23 @@ public:
     }
 
     void remove_guest(string name){
+        bool check = false ;
         for (int i = 0; i < no_guest; i++) {
             if(guest_list[i].getName() == name){
                 for(int j=i;  j<no_guest; j++){
                     guest_list[j]=guest_list[j+1]; //shifting left guests 
                 }
-                cout<<"Guest \""<<name<<"\" Deleted\n"<<endl;
+                cout<<"Guest \""<<name<<"\" Deleted"<<endl;
                 no_guest--;
+                check=true;
             }
         }
+        if(!check) cout<<"No Guest Found With This Name To Remove !"<<endl;
+        cout<<endl;
     }
 
     void display_all_guests(){
+        if(no_guest==0) cout<<"You Guest List Is Empty"<<endl;
         for (int i = 0; i < no_guest; i++) {
             guest_list[i].display_guest();
         }
@@ -100,21 +105,27 @@ public:
     }
 
     void update_guest_invitation(string name, string new_date){
+        bool check = false ;
         for (int i = 0; i < no_guest; i++) {
             if (guest_list[i].getName() == name) {
                 guest_list[i].update_invitation(new_date);
+                check=true;
             }
         }
+        if(!check) cout<<"No Guest Found With This Name To Update !"<<endl;
         cout<<endl;
     }
 
     void send_reminders(string date){
+        bool check = false ;
         cout << "Sending reminders..." << endl;
         for (int i = 0; i < no_guest; i++) {
             if (guest_list[i].getDate() == date) {
                 guest_list[i].display_reminder();
+                check=true;
             }
         }
+        if(!check) cout<<"No Guests on This Day to Remind !"<<endl;
         cout<<endl;
     }
 
@@ -142,6 +153,8 @@ public:
 
 
 int main(){
+
+    cout<<"\n          ------Main Test Case------\n"<<endl;
     //Create Iftar Manager
     IftarManager manager = IftarManager();
 
@@ -161,7 +174,25 @@ int main(){
     //Send reminders
     manager.send_reminders("2025-03-15");
 
-    //Deleting A guest
+
+
+    cout<<"\n          ------Additional Test Cases------\n"<<endl;
+    
+    //Removing Guest
     manager.remove_guest("Zainab");
+    manager.display_all_guests();
+    cout<<"--------------------"<<endl;
+
+    //Updating date for not existing Guest
+    manager.update_guest_invitation("Mohamed", "2025-03-15");
+    cout<<"--------------------"<<endl;
+
+    //Removing a Non exist Guest
+    manager.remove_guest("Mohamed");
+    cout<<"--------------------"<<endl;
+
+    //Sending reminders on a Date with no Guests On
+    manager.send_reminders("2025-03-30");
+    cout<<"--------------------"<<endl;
 
 }
