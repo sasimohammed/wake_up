@@ -343,12 +343,144 @@ int value(const string& postfix) {
     return st.empty() ? -1 : st.top();
 }
 
+#include <iostream>
+using namespace std;
+
+template <typename T>
+struct node {
+    T data;
+    node* left;
+    node* right;
+
+    node(T val) { // Constructor
+        data = val;
+        left = right = nullptr;
+    }
+};
+
+// Insert function
+template <typename T>
+node<T>* insert(node<T>* root, T val) {
+    if (root == nullptr) {
+        return new node<T>(val);
+    }
+    if (val < root->data) {
+        root->left = insert(root->left, val);
+    } else {
+        root->right = insert(root->right, val);
+    }
+    return root;
+}
+
+// Helper function to find the minimum value in a subtree
+template <typename T>
+node<T>* findMin(node<T>* root) {
+    while (root->left != nullptr) {
+        root = root->left;
+    }
+    return root;
+}
+
+template <typename T>
+node<T>* findMax(node<T>* root) {
+    while (root->right != nullptr) {
+        root = root->right;
+    }
+    return root;
+}
+
+// Delete function
+template <typename T>
+node<T>* delete_node(node<T>* root, T value) {
+    if (root == nullptr) {
+        return root;
+    }
+    if (value < root->data) {
+        root->left = delete_node(root->left, value);
+    } else if (value > root->data) {
+        root->right = delete_node(root->right, value);
+    } else {
+        // Case 1: No child or one child
+        if (root->left == nullptr) {
+            node<T>* temp = root->right;
+            delete root;
+            return temp;
+        } else if (root->right == nullptr) {
+            node<T>* temp = root->left;
+            delete root;
+            return temp;
+        }
+
+        // Case 2: Two children -> Find the inorder successor
+        node<T>* temp = findMin(root->right);
+        root->data = temp->data;  // Replace with successor value
+        root->right = delete_node(root->right, temp->data); // Delete successor
+    }
+    return root;
+}
+
+// **Inorder Traversal (Left, Root, Right)**
+template <typename T>
+void inorder(node<T>* root) {
+    if (root != nullptr) {
+        inorder(root->left);
+        cout << root->data << " ";
+        inorder(root->right);
+    }
+}
+
+// **Preorder Traversal (Root, Left, Right)**
+template <typename T>
+void preorder(node<T>* root) {
+    if (root != nullptr) {
+        cout << root->data << " ";
+        preorder(root->left);
+        preorder(root->right);
+    }
+}
+
+// **Postorder Traversal (Left, Right, Root)**
+template <typename T>
+void postorder(node<T>* root) {
+    if (root != nullptr) {
+        postorder(root->left);
+        postorder(root->right);
+        cout << root->data << " ";
+    }
+}
+
+
+
+
+
+
+
 int main() {
 //    linkedlist<int>s;
 //    s.insert(1);
 //    s.insert(2);
 //    s.insert(3);
 //s.insert_back(5);
+
+
+    node<int>* root = nullptr;
+
+    // Insert elements
+    root = insert(root, 50);
+    root = insert(root, 70);
+    root = insert(root, 20);
+    root = insert(root, 10);
+    root = insert(root, 100);
+    cout << "Inorder before deletion: ";
+    preorder(root);
+    root=delete_node(root,50);
+    cout<<endl;
+    preorder(root);
+    cout << endl;
+    node<int>* minNode = findMin(root);
+    node<int>* maxNode = findMax(root);
+    if (minNode) cout << "Minimum value: " << minNode->data << endl;
+    if (maxNode) cout << "Maximum value: " << maxNode->data << endl;
 
 //string infix;
 //cin>>infix;
@@ -357,9 +489,11 @@ int main() {
 //
 //
 //cout<<value(h);
-int arr[5]={2,2,7,0};
-vector<int>ar={2,2,2,2,40,3,0,0,0,0,1,1,7,0};
-    count_sort(ar);
+//int arr[5]={2,2,7,0};
+//vector<int>ar={2,2,2,2,40,3,0,0,0,0,1,1,7,0};
+//    count_sort(ar);
+
+
 
 
 //circular_queue<int>q(5);
