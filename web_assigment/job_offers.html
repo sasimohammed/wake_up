@@ -1,0 +1,273 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>job_offers</title>
+  <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css">
+  <link rel="stylesheet" href="css/style.css">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bai+Jamjuree:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&family=Caveat:wght@400..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Jost:ital,wght@0,100..900;1,100..900&family=Maven+Pro:wght@400..900&family=Playwrite+HU:wght@100..400&family=Playwrite+IT+Moderna:wght@100..400&family=Playwrite+US+Modern+Guides&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+  <link href="https://fonts.googleapis.com/css2?family=Rubik+One&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bai+Jamjuree:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&family=Caveat:wght@400..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Jost:ital,wght@0,100..900;1,100..900&family=Maven+Pro:wght@400..900&family=Playwrite+HU:wght@100..400&family=Playwrite+IT+Moderna:wght@100..400&family=Playwrite+US+Modern+Guides&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Rubik+Mono+One&display=swap" rel="stylesheet">
+
+</head>
+<body>
+
+<div>
+
+</div>
+<nav>
+  <div class="logo">
+    <img src="img/logo.png" alt="Logo">
+  </div>
+
+  <div class="nav_links">
+    <a href="#">Profile</a>
+    <a href="job_offers.html">Job Offers</a>
+
+    <div class="nav-icons">
+      <i class="bx bx-bell notification-icon"></i>
+      <img src="img/user.png" alt="Profile" class="profile-img">
+    </div>
+
+  </div>
+
+
+</nav>
+
+
+
+
+<section class="main">
+
+
+  <div class="filter">
+    <div class="search-container">
+      <input type="text" class="search-input" placeholder="Search for jobs...">
+      <i class="bx bx-search search-icon"></i>
+    </div>
+
+
+    <div  class="filters">
+
+
+
+<div>
+  <h3>Experience Level</h3>
+  <div  class="options">
+    <label><input type="checkbox"> Entry Level</label>
+    <label><input type="checkbox"> Intermediate </label>
+    <label><input type="checkbox"> Expert </label>
+  </div>
+</div>
+
+
+
+      <div>
+        <label for="location"><h3>Client Location</h3></label>
+        <select id="location" class="location">
+          <option>Select client locations</option>
+          <option>USA</option>
+          <option>Europe</option>
+          <option>Asia</option>
+          <option>Australia</option>
+        </select>
+      </div>
+
+      <div>
+        <label for="timezone"><h3>Client Time Zones</h3></label>
+        <select id="timezone">
+          <option>Select client time zones</option>
+          <option>UTC-5 (EST)</option>
+          <option>UTC+0 (GMT)</option>
+          <option>UTC+5 (IST)</option>
+          <option>UTC+8 (CST)</option>
+        </select>
+      </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      <div>
+        <h3>Number of Proposals</h3>
+        <div  class="options">
+          <label><input type="checkbox"> Less Than 5</label>
+          <label><input type="checkbox"> 5 to 10 </label>
+          <label><input type="checkbox"> 15 to 20 </label>
+          <label><input type="checkbox"> 25 to 30 </label>
+          <label><input type="checkbox"> 35 to 50 </label>
+        </div>
+      </div>
+
+      <div>
+        <h3>Project Length</h3>
+        <div  class="options">
+          <label><input type="checkbox"> Less than one month</label>
+          <label><input type="checkbox"> 1 to 3 months </label>
+          <label><input type="checkbox"> 3 to 6 months </label>
+          <label><input type="checkbox"> More Than 6 Month </label>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <div class="jobs">
+    <div class="job_card">
+      <h3 class="posted-time">Posted 2 hours ago</h3>
+      <div class="job-header">
+        <h1 class="job-title">
+          Senior Front-End Developer (Next.js v15) for Payments Platform
+        </h1>
+        <div class="job-actions">
+          <i class="bx bx-heart"></i>
+          <i class="bx bx-dislike"></i>
+        </div>
+      </div>
+
+      <div class="info">
+        <div class="client-details">
+          <p><i class="bx bx-badge-check"></i> Payment Verified</p>
+          <p><i class="bx bx-dollar-circle"></i> $10 Spent</p>
+          <p><i class="bx bx-map"></i> United States</p>
+        </div>
+
+        <div class="payment">
+          <p><i class="bx bx-time"></i> Hourly Rate: <strong>$30 - $50/hr</strong></p>
+        </div>
+
+        <p class="description">
+          We are looking for an experienced Next.js developer to architect, develop, and optimize a secure and scalable payments platform. The ideal candidate should have a deep understanding of Next.js, front-end performance optimization, and security best practices. You will be responsible for building a seamless
+        </p>
+
+        <div class="key_words">
+          <span class="keyword">Next.js</span>
+          <span class="keyword">React</span>
+          <span class="keyword">TypeScript</span>
+          <span class="keyword">Tailwind CSS</span>
+        </div>
+
+        <p class="proposals"><i class="bx bx-envelope"></i> Proposals: 10 to 15</p>
+      </div>
+    </div>
+
+
+
+
+
+
+
+    <div class="job_card">
+      <h3 class="posted-time">Posted 2 hours ago</h3>
+      <div class="job-header">
+        <h1 class="job-title">
+          Senior Front-End Developer (Next.js v15) for Payments Platform
+        </h1>
+        <div class="job-actions">
+          <i class="bx bx-heart"></i>
+          <i class="bx bx-dislike"></i>
+        </div>
+      </div>
+
+      <div class="info">
+        <div class="client-details">
+          <p><i class="bx bx-badge-check"></i> Payment Verified</p>
+          <p><i class="bx bx-dollar-circle"></i> $10 Spent</p>
+          <p><i class="bx bx-map"></i> United States</p>
+        </div>
+
+        <div class="payment">
+          <p><i class="bx bx-time"></i> Hourly Rate: <strong>$30 - $50/hr</strong></p>
+        </div>
+
+        <p class="description">
+          We are looking for an experienced Next.js developer to architect, develop, and optimize a secure and scalable payments platform. The ideal candidate should have a deep understanding of Next.js, front-end performance optimization, and security best practices. You will be responsible for building a seamless
+        </p>
+
+        <div class="key_words">
+          <span class="keyword">Next.js</span>
+          <span class="keyword">React</span>
+          <span class="keyword">TypeScript</span>
+          <span class="keyword">Tailwind CSS</span>
+        </div>
+
+        <p class="proposals"><i class="bx bx-envelope"></i> Proposals: 10 to 15</p>
+      </div>
+    </div>
+
+
+
+
+
+
+    <div class="job_card">
+      <h3 class="posted-time">Posted 2 hours ago</h3>
+      <div class="job-header">
+        <h1 class="job-title">
+          Senior Front-End Developer (Next.js v15) for Payments Platform
+        </h1>
+        <div class="job-actions">
+          <i class="bx bx-heart"></i>
+          <i class="bx bx-dislike"></i>
+        </div>
+      </div>
+
+      <div class="info">
+        <div class="client-details">
+          <p><i class="bx bx-badge-check"></i> Payment Verified</p>
+          <p><i class="bx bx-dollar-circle"></i> $10 Spent</p>
+          <p><i class="bx bx-map"></i> United States</p>
+        </div>
+
+        <div class="payment">
+          <p><i class="bx bx-time"></i> Hourly Rate: <strong>$30 - $50/hr</strong></p>
+        </div>
+
+        <p class="description">
+          We are looking for an experienced Next.js developer to architect, develop, and optimize a secure and scalable payments platform. The ideal candidate should have a deep understanding of Next.js, front-end performance optimization, and security best practices. You will be responsible for building a seamless
+        </p>
+
+        <div class="key_words">
+          <span class="keyword">Next.js</span>
+          <span class="keyword">React</span>
+          <span class="keyword">TypeScript</span>
+          <span class="keyword">Tailwind CSS</span>
+        </div>
+
+        <p class="proposals"><i class="bx bx-envelope"></i> Proposals: 10 to 15</p>
+      </div>
+    </div>
+
+
+  </div>
+
+
+
+</section>
+
+
+
+
+
+</body>
+</html>
