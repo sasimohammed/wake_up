@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="form1.css">
+    <title>Sign up - Employee</title>
+</head>
+
+<body>
+
+    <div class="Form1">
+        <div class="personLogo">
+            <img src="https://cdn-icons-png.flaticon.com/128/3685/3685999.png" alt="person-logo" width="60px"
+                height="60px">
+        </div>
+        <h1 class="formTitle">Sign Up</h1>
+        <form action="" method="get">
+
+            <div class="nameFields">
+                <div class="name-group">
+                    <label for="name1">First Name</label>
+                    <input type="text" id="name1" placeholder="Enter first name">
+                </div>
+                <div class="name-group">
+                    <label for="name2">Last Name</label>
+                    <input type="text" id="name2" placeholder="Enter last name">
+                </div>
+            </div>
+
+
+
+            <div class="email">
+                <label for="mail">Your Email</label>
+                <input type="email" placeholder="Enter your email" class="mail">
+            </div>
+            <div class="password">
+                <label for="passwrd">Password</label>
+                <input type="password" placeholder="Enter your password" class="passwrd">
+            </div>
+            <br>
+
+
+
+            <div class="number">
+                <label for="phoneNum">Phone Number</label>
+                <input type="text" placeholder="Write your phone number..." class="phoneNum">
+            </div>
+
+            <div class="info">
+                <div class="info-groub">
+                    <label>Date of Birth</label>
+                    <input type="date" class="date">
+                </div>
+                <div class="info-groub">
+                    <label for="Gender">Gender</label>
+                    <input list="Gender" placeholder="Select Gender">
+                    <datalist id="Gender">
+                        <option value="Female👩🏻">
+                        <option value="male👨🏻">
+                    </datalist>
+                </div>
+            </div>
+
+            <button class="submit">Submit</button>
+            <button class="google">
+                <div class="googleLogo">
+                    <img src="https://www.gstatic.com/marketing-cms/assets/images/d5/dc/cfe9ce8b4425b410b49b7f2dd3f3/g.webp=s96-fcrop64=1,00000000ffffffff-rw"
+                        alt="Google Logo" width="20px" height="20px">
+                </div>
+                Sign Up With Google
+            </button>
+
+        </form>
+    </div>
+    <br>
+</body>
+
+</html>

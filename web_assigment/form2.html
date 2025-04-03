@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="form2.css">
+    <title>Sign up - Company</title>
+</head>
+
+<body>
+    <div class="Form2">
+        <div class="companyLogo">
+            <img src="https://cdn-icons-png.flaticon.com/128/12892/12892223.png" alt="company-logo" width="60px"
+                height="60px">
+        </div>
+        <h1 class="formTitle">Sign Up</h1>
+        <form action="" method="get">
+
+
+            <div class="name">
+                <label for="name">Company Name</label>
+                <input type="text" id="name" placeholder="Enter Company name">
+            </div>
+
+            <div class="info-row1">
+
+                <div class="info-groub1">
+                    <label for="type">Type</label>
+                    <input list="Type" placeholder="Select Type">
+                    <datalist id="Type">
+                        <option value="Start-Up">
+                        <option value="Small Busines">
+                        <option value="Corporation">
+                    </datalist>
+                </div>
+
+                <div class="info-groub1">
+                    <label for="industry">Industry</label>
+                    <input type="text" id="industry" placeholder="Company Industry">
+                </div>
+            </div>
+
+            <div class="info-row2">
+                <div class="info-groub2">
+                    <label for="country">Country</label>
+                    <input type="text" id="country" placeholder="Based Country">
+                </div>
+
+                <div class="info-groub2">
+                    <label>Started At</label>
+                    <input type="month" class="date">
+                </div>
+            </div>
+
+
+
+            <div class="email">
+                <label for="mail">Company Email</label>
+                <input type="email" placeholder="Enter Offical mail" class="mail">
+            </div>
+            <div class="password">
+                <label for="passwrd">Password</label>
+                <input type="password" placeholder="Enter Password" class="passwrd">
+            </div>
+
+            <div class="number">
+                <label for="phoneNum">Company Phone Number</label>
+                <input type="text" placeholder="Write your Company number..." class="phoneNum">
+            </div>
+
+            <button class="submit">Submit</button>
+            <button class="google">
+                <div class="googleLogo">
+                    <img src="https://www.gstatic.com/marketing-cms/assets/images/d5/dc/cfe9ce8b4425b410b49b7f2dd3f3/g.webp=s96-fcrop64=1,00000000ffffffff-rw"
+                        alt="Google Logo" width="20px" height="20px">
+                </div>
+                Sign Up With Google
+            </button>
+
+        </form>
+    </div>
+    <br>
+</body>
+
+</html>
