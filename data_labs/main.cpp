@@ -2,6 +2,7 @@
 #include <stack>
 #include<vector>
 #include<algorithm>
+#include <queue>
 using namespace std;
 
 template<typename T>
@@ -449,6 +450,28 @@ void postorder(node<T>* root) {
     }
 }
 
+template <typename T>
+int maxBreadth(node<T>* root) {
+    if (!root) return 0;
+
+    queue < node<T> * > q;
+    q.push(root);
+    int maxWidth = 0;
+
+    while (!q.empty()) {
+        int levelSize = q.size(); // number of nodes at this level
+        maxWidth = max(maxWidth, levelSize);
+
+        for (int i = 0; i < levelSize; i++) {
+            node<T> * node = q.front(); q.pop();
+            if (node->left) q.push(node->left);
+            if (node->right) q.push(node->right);
+        }
+    }
+
+    return maxWidth;
+}
+
 
 
 
@@ -494,7 +517,9 @@ int main() {
 //    count_sort(ar);
 
 
-
+    std::string s = "Short";
+    std::cout << "Address of string object: " << &s << "\n";
+    std::cout << "Address of string data:   " << (void*)s.data() << "\n";
 
 //circular_queue<int>q(5);
 //    q.enqueue(10);
