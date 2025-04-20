@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>job_details</title>
+  <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/job_offers.css">
+  <link rel="stylesheet" href="css/job_details.css">
+  <!-- Include Inter font from Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
+
+  <script src="js/app.js"></script>
+</head>
+<body>
+
+<nav>
+  <div class="logo">
+    <img src="img/img_6.png">
+  </div>
+  <div class="nav_links">
+    <a href="profile.html">Profile</a>
+    <a href="job_offers.html">Job Offers</a>
+
+    <div class="nav-icons">
+      <i class="bx bx-bell notification-icon"></i>
+      <img src="img/user.png" alt="Profile" class="profile-img">
+    </div>
+  </div>
+</nav>
+
+<div class="job_container">
+  <div class="job_details">
+    <div class="header">
+      <h1 class="title">
+        Senior Front-End Developer (Next.js v15) for Payments Platform
+      </h1>
+      <div class="client-details">
+        <h3 class="posted-time"></h3>
+        <p class="location"><i class="bx bx-map"></i></p>
+      </div>
+    </div>
+
+    <div class="job_text">
+      <p class="job_description">
+
+      </p>
+    </div>
+
+    <div class="more">
+      <div class="more-item">
+        <div class="main_text">
+          <i class="bx bx-time"></i>
+          <div class="total_text">
+            <p>   Less than 30 hrs/week</p>
+            <p class="small-text">Hourly</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="more-item">
+        <div class="main_text">
+          <i class="bx bx-calendar"></i>
+          <div class="total_text">
+            <p>1 to 3 months</p>
+            <p class="small-text">Project Length</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="more-item">
+        <div class="main_text">
+          <i class="bx bx-signal-5"></i>
+          <div class="total_text">
+            <p>Intermediate</p>
+            <p class="small-text">I am looking for a mix of experience and value</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="job_type">
+      <p>Project type : Ongoing Project</p>
+    </div>
+
+    <div class="skills-container">
+      <h1>Skills and Expertise</h1>
+      <div class="skills">
+        <span class="skill">Python</span>
+        <span class="skill">HTML</span>
+        <span class="skill">CSS</span>
+        <span class="skill">Streamlit</span>
+        <span class="skill">Gradio</span>
+        <span class="skill">Hugging Face</span>
+      </div>
+    </div>
+
+    <div class="job-activity">
+      <h1>Activity on this job</h1>
+      <div class="activity-list">
+        <p>Proposals: 20 to 50</p>
+        <p>Interviewing: 0</p>
+        <p>Invites sent: 0</p>
+        <p>Unanswered invites: 0</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="client">
+    <div class="btns">
+      <button class="apply_btn">
+        <a href="apply.html">Apply Now</a>
+      </button>
+
+      <button class="save_btn">
+        <i class="bx bx-heart"></i> Save Job
+      </button>
+    </div>
+
+    <div class="connects">
+      <p>Required Connects to submit a proposal: 20</p>
+      <p>Available Connects: 111</p>
+    </div>
+
+    <div class="about_client">
+      <h1>About Client</h1>
+      <p>Payment method verified</p>
+      <p>Rating: 5 out of 5 <span class="stars">
+        <i class="bx bxs-star"></i>
+        <i class="bx bxs-star"></i>
+        <i class="bx bxs-star"></i>
+        <i class="bx bxs-star"></i>
+        <i class="bx bxs-star"></i>
+      </span></p>
+      <p>Reviews: 4.99 out of 4 reviews</p>
+      <p>Location: United Kingdom, London 6:58 PM</p>
+      <p>Jobs Posted: 100</p>
+      <p>Hire Rate: 23%, 2 open jobs</p>
+      <p>Total Spent: $4.2K</p>
+      <p>Hires: 25, 5 active</p>
+      <p>Avg Hourly Rate Paid: $21.97/hr</p>
+      <p>Total Hours: 122 hours</p>
+      <p>Member Since: Oct 4, 2010</p>
+    </div>
+
+    <div class="link">
+      <p>Job link</p>
+      <a href="https://www.upwork.com/jobs/~021906717601682041224" target="_blank">
+        <p> https://www.upwork.com/jobs/~021906717601682041224</p>
+      </a>
+    </div>
+  </div>
+</div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const params = new URLSearchParams(window.location.search);
+    const jobId = params.get("id");
+
+    if (jobId) {
+      fetch("jobdetails.json")
+        .then(response => response.json())
+        .then(data => {
+          const job = data.find(j => jobId == j.id);
+          if (job) {
+            // Set job details
+            document.querySelector(".title").textContent = job.title;
+            document.querySelector(".posted-time").textContent = job.posted; // Corrected from job.post
+            document.querySelector(".location").innerHTML = `<i class="bx bx-map"></i> ${job.location}`;
+
+            document.querySelector(".job_description").textContent = job.description;
+
+            document.querySelector(".job_type").textContent = `Project type: ${job.category} - ${job.subcategory}`; // Assuming you want category/subcategory
+
+            // Set skills
+            const skillsContainer = document.querySelector(".skills");
+            skillsContainer.innerHTML = "";
+            job.skills.forEach(skill => {
+              const span = document.createElement("span");
+              span.className = "skill";
+              span.textContent = skill;
+              skillsContainer.appendChild(span);
+            });
+
+            // Set job activity details (directly accessing the JSON)
+            const activityList = document.querySelector(".activity-list"); // Make sure this class exists in your HTML
+            activityList.innerHTML = `
+            <p>Proposals: ${job.proposals}</p>
+            <p>Duration: ${job.duration}</p>
+            <p>Hourly Rate: ${job.rate}</p>
+
+            <p>Stars: ${job.stars}</p>
+          `;
+
+          } else {
+            alert("Job not found!");
+          }
+        })
+        .catch(error => console.error("Error fetching job details:", error));
+    } else {
+      alert("Job ID not found in URL!");
+    }
+  });
+</script>
+
+</body>
+</html>

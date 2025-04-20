@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Apply</title>
+  <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/job_offers.css">
+  <link rel="stylesheet" href="css/job_details.css">
+  <link rel="stylesheet" href="css/apply.css">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bai+Jamjuree:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&family=Caveat:wght@400..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Jost:ital,wght@0,100..900;1,100..900&family=Maven+Pro:wght@400..900&family=Playwrite+HU:wght@100..400&family=Playwrite+IT+Moderna:wght@100..400&family=Playwrite+US+Modern+Guides&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+  <link href="https://fonts.googleapis.com/css2?family=Rubik+One&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bai+Jamjuree:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&family=Caveat:wght@400..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Jost:ital,wght@0,100..900;1,100..900&family=Maven+Pro:wght@400..900&family=Playwrite+HU:wght@100..400&family=Playwrite+IT+Moderna:wght@100..400&family=Playwrite+US+Modern+Guides&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Rubik+Mono+One&display=swap" rel="stylesheet">
+
+</head>
+<body>
+
+
+<nav>
+  <div class="logo">
+    <img src="img/img_6.png">
+  </div>
+
+  <div class="nav_links">
+    <a href="profile.html">Profile</a>
+    <a href="job_offers.html">Job Offers</a>
+
+    <div class="nav-icons">
+      <i class="bx bx-bell notification-icon"></i>
+      <img src="img/user.png" alt="Profile" class="profile-img">
+    </div>
+
+  </div>
+
+
+</nav>
+
+<div class="apply_main">
+
+<h1>Submit Proposal</h1>
+<div class="proposal_setting">
+  <h1>Proposal settings</h1>
+  <p>This proposal requires 21 Connects<br></p>
+  <p>When you submit this proposal, you'll have 90 Connects remaining.</p>
+</div>
+
+  <div class="terms">
+
+    <div class="terms_text">
+      <h1>Terms </h1>
+      <h3>What is the rate you'd like to bid for this job?</h3>
+      <div class="budget">
+        <p>Your profile rate: $8.00/hr</p>
+        <P>Client’s budget: $25.00 - $40.00</P>
+      </div>
+
+      <div  class="hourly_rate">
+        <h3>Hourly Rate</h3>
+        <div class="input_filed">
+          <input type="text"  placeholder="$7.2"><span>/hr</span>
+        </div>
+      </div>
+
+
+      <div class="fee">
+        <h4>10% Freelancer Service Fee</h4>
+        <div class="input_filed">
+          <p>$-0.8</p><span>/hr</span>
+        </div>
+      </div>
+
+      <div  class="hourly_rate">
+        <h3>You Will Receive </h3>
+        <div class="input_filed">
+          <input type="text"  placeholder="$7.2"><span>/hr</span>
+        </div>
+      </div>
+
+      <div class="schedule">
+        <h3>Schedule a Rate Increase</h3>
+        <p>
+          Propose an optional rate increase. If approved by your client, your rate will increase
+          automatically over the contract’s lifetime. This term can’t be changed once you accept
+          an offer from your client.
+        </p>
+
+        <div class="rate_frequency">
+          <label for="frequency">How often do you want a rate increase?</label>
+          <select id="frequency">
+            <option>Select a frequency</option>
+            <option>Every 3 months</option>
+            <option>Every 6 months</option>
+            <option>Every year</option>
+          </select>
+        </div>
+
+        <div class="rate_increase">
+          <label for="increase">How much of an increase do you want?</label>
+          <select id="increase">
+            <option>Select a percent</option>
+            <option>5%</option>
+            <option>10%</option>
+            <option>15%</option>
+          </select>
+        </div>
+      </div>
+
+    </div>
+
+
+    <div class="terms_img">
+      <img src="img/img.png">
+      <p>Includes jobloom Hourly Protection.</p>
+      <a href="#">Learn More</a>
+    </div>
+  </div>
+
+
+  <div class="more_details">
+<h1>More Details </h1>
+<h3>Cover Letter</h3>
+    <label for="message"></label>
+    <textarea id="message" placeholder="Type here..."></textarea>
+<P>5000 characters max</P>
+  </div>
+
+  <button type="submit" class="submit_proposal">Submit</button>
+
+</div>
+
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const rateInput = document.querySelectorAll(".hourly_rate input")[0];
+    const receiveInput = document.querySelectorAll(".hourly_rate input")[1];
+    const feeOutput = document.querySelector(".fee .input_filed p");
+
+    function updateCalculations() {
+      let rate = parseFloat(rateInput.value.replace('$', ''));
+      if (isNaN(rate)) return;
+
+      let fee = +(rate * 0.1).toFixed(2);
+      let receive = +(rate - fee).toFixed(2);
+      feeOutput.textContent = `-$${fee}`;
+      receiveInput.value = `$${receive}`;
+    }
+    rateInput.addEventListener("input", updateCalculations);
+
+  });
+</script>
+
+
+
+
+
+</body>
+</html>
