@@ -1,0 +1,599 @@
+.profile_main{
+  display: flex;
+  flex-direction: column;
+  width: 85%;
+  background: transparent;
+  border: 1px solid #95BEDA;
+  justify-content: start;
+  border-radius: 10px;
+  align-items: start;
+  font-family: Inter, serif;
+  margin-top: 10%;
+  font-weight: bold;
+  margin-left:7%;
+  margin-right: 7%;
+  color:white;
+  font-size: 15px;
+  height: auto ;
+
+
+}
+
+.profile_info{
+  display:flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: start;
+  width: 96%;
+
+  height: 100%;
+}
+
+.my_name{
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  gap:10px;
+  position: relative;
+  align-items: center;
+  font-family: Inter, serif;
+  font-weight: bold;
+  font-size: 15px;
+  border-left:none;
+  border-right:none;
+  border-bottom:1px solid #95BEDA;
+  border-left:none;
+  padding:20px;
+
+
+}
+.my_name img{
+  width:80px;
+  border-radius: 50%;
+height:80px;
+
+}
+.info_text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+}
+
+.info_text h2 {
+  font-family: Inter, serif;
+  margin: 0 0 5px 0; /* Remove extra margin */
+}
+
+.info_text p {
+  font-family: Inter, serif;
+  color: #95BEDA;
+  font-weight: lighter;
+  font-size: 15px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin: 0;
+}
+
+.profile_btn {
+  display: flex;
+  align-items: center;
+  gap: 10px; /* Space between button and share text */
+}
+
+.profile_btn p {
+  display: flex;
+  align-items: center;
+  gap: 5px; /* Space between icon and text */
+  font-family: Inter, serif;
+  color: #95BEDA;
+  cursor: pointer; /* Make it look clickable */
+}
+
+.profile_btn{
+  position: absolute;
+
+  color: white;
+  border: none;
+  right:2%;
+  display: flex ;
+  flex-direction: row;
+  align-items: center;
+  top:40%;
+
+
+}
+
+.profile_btn button{
+
+  background:  #082076 ;
+  color: white;
+  border: none;
+  padding: 10px 30px;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 10px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: row;
+  gap:10px;
+
+  align-items: center;
+  justify-content: space-between;
+
+}
+
+
+
+.qualifications{
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 100%;
+
+}
+
+
+.about_me{
+  display: flex;
+  flex-direction: column;
+  width: 30%;
+  border-right:1px solid #95BEDA;
+  height: auto;
+  padding: 3%;
+
+}
+
+.qualification{
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+
+  height: 100%;
+
+}
+
+.qualification_name{
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: start;
+  width: 100%;
+  padding: 3%;
+  border-left:none;
+  border-right:none;
+  border-bottom:1px solid #95BEDA;
+  border-left:none;
+
+
+}
+.qualification_name p{
+  font-family: Inter, serif;
+  font-weight: lighter;
+  color: white;
+  font-size: 15px;
+  text-align: start;
+  width: 80%;
+
+
+}
+.row{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width:100%;
+
+}
+
+
+.qualification_name h3{
+
+  font-family: Inter, serif;
+  font-weight: bold;
+  color: white;
+  font-size: 20px;
+  GAP:10px;
+  text-align: center;
+}
+
+.bx-pencil {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color:#95BEDA;
+  color: #333;
+  font-size: 18px;
+  margin-left: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.qualification_name .bx-pencil:hover {
+  opacity: 0.7;
+}
+
+.portfolio{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 3%;
+  border-left:none;
+  border-right:none;
+  border-bottom:1px solid #95BEDA;
+  border-left:none;
+
+
+
+}
+
+
+.my_projects {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr); /* 5 equal columns */
+  gap: 20px;
+
+}
+
+
+.my_projects > div:hover {
+  transform: translateY(-5px);
+
+}
+
+.my_projects img {
+  width: 100%;
+  height: 130px;
+  object-fit: cover; /* Makes the image fill the box and crop excess */
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+
+.bx-plus{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color:#95BEDA;
+  color: #333;
+  font-size: 18px;
+  margin-left: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+
+} .bx-plus:hover {
+    opacity: 0.7;
+  }
+
+
+.qualification_skills{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 3%;
+  border-bottom:1px solid #95BEDA;
+
+}
+
+
+.my_connects{
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  padding: 5%;
+  background-color:#082076 ;
+  color: white;
+  font-family: Inter, serif;
+  font-weight: bold;
+  font-size: 15px;
+  border-radius: 10px;
+  margin-bottom: 10%;
+
+
+
+
+}
+.my_connects  h2{
+  font-family: Inter, serif;
+  font-weight: bold;
+  color: white;
+  font-size: 20px;
+
+}
+
+
+
+.my_connects a{
+  color:#5EEFFF;
+  font-family: Inter, serif;
+  font-weight: lighter;
+}
+.my_hours{
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+
+
+}
+.my_hours p{
+  color: #95BEDA;
+  font-family: Inter, serif;
+  font-weight: lighter;
+  font-size: 14px;
+  margin: 0 0 5px 0;
+}
+
+
+
+.certifications-section,
+.social-section {
+  margin-top: 30px;
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.certifications-section h2,
+.social-section h2 {
+  font-size: 24px;
+  margin-bottom: 15px;
+}
+
+.certifications-section ul {
+  list-style-type: disc;
+  padding-left: 20px;
+}
+
+.certifications-section li {
+  font-size: 16px;
+  margin-bottom: 8px;
+  color: #333;
+}
+
+.social-links {
+  display: flex;
+  gap: 15px;
+  font-size: 24px;
+}
+
+.social-links a {
+  color: #333;
+  transition: color 0.3s;
+}
+
+.social-links a:hover {
+  color: #007bff;
+}
+
+
+
+.applied_jobs {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+
+  padding: 10px 20px;
+  margin-bottom: 3%;
+}
+
+.job_card {
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+  transition: transform 0.3s ease;
+  position: relative;
+}
+
+.job_card:hover {
+  transform: translateY(-5px);
+  background-color: #888888;
+}
+
+.job_card img {
+  width: 100%;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+.job_card p {
+  color: #082076;
+  margin-bottom: 5px;
+}
+
+.job_card .rating {
+  color: #f5a623;
+  font-weight: bold;
+  display: block;
+  font-size: 14px;
+}
+
+/* Tooltip date on hover */
+.job_card::after {
+  content: attr(data-date);
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #333;
+  color: #fff;
+  font-size: 12px;
+  padding: 4px 8px;
+  border-radius: 5px;
+  opacity: 0;
+  pointer-events: none;
+  white-space: nowrap;
+  transition: opacity 0.3s ease;
+}
+
+.job_card:hover::after {
+  opacity: 1;
+
+}
+.applied h1{
+  padding: 10px 20px;
+}
+
+/* Certifications Section */
+.certifications-section {
+  padding: 20px;
+  background-color: transparent;
+  border-radius: 10px;
+  border:solid 1px #95BEDA;
+  margin: 30px 0;
+}
+
+.certifications-section h2 {
+  font-size: 20px;
+  color: white;
+
+}
+
+
+.certification-item {
+  padding: 20px;
+ display: flex;
+  flex-direction:column ;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 80%;
+
+
+}
+.certification-item p {
+  font-size: 15px;
+  color: #95BEDA;
+  margin-bottom: 20px;
+}
+
+
+
+
+.certification-item img {
+  width: 50%;
+  height: auto;
+
+  margin-bottom: 15px;
+  border-radius: 8px;
+}
+
+
+.certification-item a {
+  font-size: 14px;
+  color: #5EEFFF;
+  font-weight: bold;
+}
+
+.certification-item a:hover {
+  text-decoration: underline;
+}
+
+.add_form {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+  font-family: Inter, sans-serif;
+
+}
+
+.add_form.active {
+  display: flex;
+}
+
+.add_form form {
+  background: white;
+  padding: 30px;
+  border-radius: 8px;
+  width: 25%;
+  height: 70%;
+  position: relative;
+
+}
+
+.close-icon {
+  position: absolute;
+  top: 10%;
+  right: 30%;
+  font-size: 24px;
+  cursor: pointer;
+  color: white;
+  z-index: 1000;
+}
+.add_form form select{
+  color: black;
+}
+
+
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: 500;
+  color: #444;
+}
+
+input[type="text"],
+input[type="number"],
+select,
+textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+textarea {
+  height:30px;
+  resize: vertical;
+  color: black;
+}
+
+input[type="file"] {
+  width: 100%;
+  padding: 5px 0;
+}
+
+.submit-btn {
+  width: 80%;
+  padding: 12px;
+  background-color: #082076;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-bottom:20px;
+  margin-left:30px;
+
+
+}
+
+.submit-btn:hover {
+  opacity: 0.8;
+}
+
+
+
