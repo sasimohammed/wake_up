@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Dashboard</title>
+  <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/job_offers.css">
+  <link rel="stylesheet" href="css/job_details.css">
+  <link rel="stylesheet" href="css/apply.css">
+  <link rel="stylesheet" href="css/profile.css">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bai+Jamjuree&family=Caveat&family=Inter&family=Jost&family=Maven+Pro&family=Playwrite+HU&family=Playwrite+IT+Moderna&family=Playwrite+US+Modern+Guides&family=Poppins&display=swap" rel="stylesheet">
+
+
+
+</head>
+<body>
+
+
+<div class="add_form">
+  <i class='bx bx-x close-icon' id="close_form"></i>
+  <form id="add_form">
+    <h2>Post New Job</h2>
+<div class="row">
+  <div class="form-group">
+    <label for="jobTitle">Job Title</label>
+    <input type="text" id="jobTitle" name="jobTitle" placeholder="Job Title" required>
+  </div>
+
+  <div class="form-group">
+    <label for="companyName">Company Name</label>
+    <input type="text" id="companyName" name="companyName" placeholder="Company Name" required>
+  </div>
+
+</div>
+<div class="row">
+  <div class="form-group">
+    <label for="location">Location</label>
+    <input type="text" id="location" name="location" placeholder="Job Location" required>
+  </div>
+
+  <div class="form-group">
+    <label for="salary">Salary (optional)</label>
+    <input type="number" id="salary" name="salary" placeholder="Salary">
+  </div>
+</div>
+
+
+    <div class="form-group">
+      <label for="jobType">Job Type</label>
+      <select id="jobType" name="jobType" required>
+        <option value="">Select Job Type</option>
+        <option value="full-time">Full-Time</option>
+        <option value="part-time">Part-Time</option>
+        <option value="internship">Internship</option>
+        <option value="remote">Remote</option>
+      </select>
+    </div>
+
+
+
+    <div class="form-group">
+      <label for="description">Job Description</label>
+      <textarea id="description" name="description" placeholder="Job Description" required></textarea>
+    </div>
+
+    <div class="form-group">
+      <label for="companyImage">Company Logo (optional)</label>
+      <input type="text" id="companyImage" name="companyImage" placeholder="Enter image URL">
+
+    </div>
+
+    <button type="submit" class="submit-btn">Post Job</button>
+  </form>
+</div>
+
+
+<nav>
+  <div class="logo">
+    <img src="img/img_6.png">
+  </div>
+
+  <div class="nav_links">
+    <a href="company_profile.html">Profile</a>
+    <a href="job_offers.html">Job Offers</a>
+
+    <div class="nav-icons">
+      <i class="bx bx-bell notification-icon"></i>
+      <img src="img/user.png" alt="Profile" class="profile-img">
+    </div>
+  </div>
+</nav>
+
+<div class="profile_main">
+  <div class="profile_info">
+
+
+
+
+    <div class="my_name">
+      <img src="https://img.freepik.com/free-vector/job-business-concept-composition_98292-6875.jpg?t=st=1744841611~exp=1744845211~hmac=ca0a918011e0b2184263e22abb319da5289f7586dd8b9e2961b0abdb725bf346&w=826">
+      <div class="info_text">
+        <h2>Google Inc.</h2>
+        <p><i class="bx bxs-map"></i> Google HQ – Mountain View, CA | Local Time: 9:00 AM</p>
+      </div>
+
+      <div class="profile_btn">
+        <button><i class="bx bx-cog"></i> Admin Settings</button>
+        <button><i class="bx bx-globe"></i> View Site</button>
+      </div>
+    </div>
+
+    <div class="qualifications">
+      <div class="about_me">
+        <div class="my_connects">
+          <h2>Active Job Posts: 12</h2>
+          <div class="row">
+            <a href="#">View All Jobs</a>
+            <a href="#">Add New Job</a>
+          </div>
+        </div>
+
+        <div class="row">
+          <h3>Company Info</h3>
+          <i class="bx bx-plus"></i>
+        </div>
+        <div class="row">
+          <h3>Admin Team</h3>
+          <i class="bx bx-plus"></i>
+        </div>
+        <div class="row">
+          <h3>Subscription</h3>
+          <i class="bx bx-plus"></i>
+        </div>
+
+        <div class="my_hours">
+          <div class="row">
+            <h3>Support Hours</h3>
+            <div>
+              <i class="bx bx-plus"></i>
+              <i class="bx bx-pencil"></i>
+            </div>
+          </div>
+          <p>Mon - Fri, 9am to 6pm</p>
+        </div>
+
+        <div class="certifications-section">
+          <div class="row">
+            <h2>Recent Activities</h2>
+            <i class="bx bx-plus"></i>
+          </div>
+
+          <div class="certification-item">
+            <img src="https://img.freepik.com/free-icon/settings_318-264772.jpg" alt="Activity">
+            <p>Job "Software Engineer" was updated</p>
+            <a href="#">View Details</a>
+          </div>
+        </div>
+
+        <div class="certifications-section">
+          <div class="row">
+            <h2>Team Notes</h2>
+            <i class="bx bx-plus"></i>
+          </div>
+
+          <div class="certification-item">
+            <img src="https://img.freepik.com/free-icon/team_318-304793.jpg" alt="Team">
+            <p>Team meeting scheduled for recruitment strategy</p>
+            <a href="#">View Schedule</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="qualification">
+        <div class="qualification_name">
+          <div class="row">
+            <h2>HR Manager <i class="bx bx-pencil"></i></h2>
+            <h3>Company: Google Inc. <i class="bx bx-pencil"></i></h3>
+          </div>
+          <div class="row">
+            <p>Welcome to the Google Admin Dashboard. Here, you can manage job posts, edit company details, monitor applicant activity, and coordinate with your team efficiently.</p>
+            <i class="bx bx-pencil"></i>
+          </div>
+        </div>
+
+        <div class="portfolio">
+          <div class="row">
+            <h2>Job Posts Overview</h2>
+            <i class="bx bx-plus toggle_form"  id="toggle_form"></i>
+          </div>
+
+          <div class="my_projects">
+            <div>
+              <img src="https://img.freepik.com/free-vector/users-group-magnifying-glass_78370-6977.jpg?uid=R117230801&ga=GA1.1.578030478.1725297375&semt=ais_hybrid&w=740" alt="Job 1">
+              <p>Frontend Engineer</p>
+            </div>
+            <div>
+              <img src="https://img.freepik.com/free-vector/job-vacancy-background-with-chair-flat-style_23-2147875408.jpg?uid=R117230801&ga=GA1.1.578030478.1725297375&semt=ais_hybrid&w=740" alt="Job 2">
+              <p>UI/UX Designer</p>
+            </div>
+            <div>
+              <img src="https://img.freepik.com/free-vector/job-vacancy-background-hand-drawn-style_23-2147867679.jpg?t=st=1744841853~exp=1744845453~hmac=b5710569543bc842ebde3a01bcd2f89aeec3cf34c470245576b79b7763e7f05d&w=826" alt="Job 3">
+              <p>Backend Developer</p>
+            </div>
+            <div>
+              <img src="https://img.freepik.com/premium-vector/persons-magnifier-concept-hiring-hand-drawn-icon_203633-7314.jpg?uid=R117230801&ga=GA1.1.578030478.1725297375&semt=ais_hybrid&w=740" alt="Job 4">
+              <p>Project Manager</p>
+            </div>
+            <div>
+              <img src="https://img.freepik.com/free-vector/business-background-design_1200-13.jpg?t=st=1744841911~exp=1744845511~hmac=9aac6354ac215c9c22329ffa98bff8f7bc352aef7ffb96940b21b91a31f89472&w=826" alt="Job 5">
+              <p>HR Specialist</p>
+            </div>
+            <div>
+              <img src="https://img.freepik.com/free-vector/job-vacancy-background-hand-drawn-style_23-2147867688.jpg?t=st=1744841936~exp=1744845536~hmac=65b00749335c5e92776f1cdfb622874e5519efa21fa576fdc61195e6d33411d5&w=826" alt="Job 6">
+              <p>Data Analyst</p>
+            </div>
+            <div>
+              <img src="https://img.freepik.com/premium-vector/vector-design-job-seeker-male-icon-style_822882-239873.jpg?w=826" alt="Job 7">
+              <p>Marketing Specialist</p>
+            </div>
+            <div>
+              <img src="https://img.freepik.com/free-vector/business-background-design_1200-92.jpg?t=st=1744841983~exp=1744845583~hmac=a99f739a4113297d2f71d15395b2ddd8e493ea8c90ddecbca371e99e32df68d9&w=826" alt="Job 8">
+              <p>Executive Assistant</p>
+            </div>
+          </div>
+        </div>
+
+
+
+        <div class="portfolio">
+          <div class="row">
+            <h2>Job Candidates</h2>
+            <i class="bx bx-plus"></i>
+          </div>
+
+          <div class="my_projects">
+            <div>
+              <img src="https://img.freepik.com/free-photo/medium-shot-contemplative-man-seaside_23-2150531603.jpg?uid=R117230801&ga=GA1.1.578030478.1725297375&semt=ais_country_boost&w=740" alt="Candidate 1">
+              <p>John Doe - Frontend Engineer</p>
+            </div>
+            <div>
+              <img src="https://img.freepik.com/free-photo/portrait-brothers-playing-chess-together-outdoors_23-2150266860.jpg?t=st=1744246794~exp=1744250394~hmac=b7d08b37b598efee931c76a12a32d613ce5300fefd69c15fd028b02771b69acf&w=740" alt="Candidate 2">
+              <p>Jane Smith - Backend Developer</p>
+            </div>
+            <div>
+              <img src="https://img.freepik.com/free-photo/experienced-florist-flower-shop_23-2148435662.jpg?t=st=1744246829~exp=1744250429~hmac=7c503f1791980790171e077f85b299f5118545e320b65f1960131b5655e5d03b&w=740" alt="Candidate 3">
+              <p>Michael Lee - UI/UX Designer</p>
+            </div>
+            <div>
+              <img src="https://img.freepik.com/free-photo/portrait-female-tourist-visiting-great-wall-china_23-2151261868.jpg?t=st=1744246874~exp=1744250474~hmac=11a6a09f49ecd56d8846e87dee12bb806ea0a75452e68c7d755dfdfe792e8a7d&w=1380" alt="Candidate 4">
+              <p>Emily Davis - HR Specialist</p>
+            </div>
+          </div>
+        </div>
+
+
+
+        <div class="portfolio">
+          <div class="row">
+            <h2>Job Openings</h2>
+            <i class="bx bx-plus   toggle_form " id=""></i>
+          </div>
+
+          <div class="my_projects opening_jop">
+            <div class="job-post">
+              <img src="https://img.freepik.com/free-vector/web-development-programmer-engineering-coding-website-augmented-reality-interface-screens-developer-project-engineer-programming-software-application-design-cartoon-illustration_107791-3863.jpg?t=st=1744247045~exp=1744250645~hmac=2f19fb6bd285c6896522deece4b10dc571078fd6bb93b155bd05186cfc976aa3&w=1380" alt="Frontend Engineer" class="job-image">
+              <p><strong>Frontend Engineer</strong></p>
+              <p>We are looking for a passionate frontend developer to join our team.</p>
+            </div>
+            <div class="job-post">
+              <img src="https://img.freepik.com/free-vector/laptop-with-program-code-isometric-icon-software-development-programming-applications-dark-neon_39422-971.jpg?t=st=1744247114~exp=1744250714~hmac=26f8dd62ba7b05cad848c630df9201715bb0f647452cefbe412f3a6300e7cd7e&w=1060" alt="Backend Developer" class="job-image">
+              <p><strong>Backend Developer</strong></p>
+              <p>Looking for an experienced backend developer to enhance our server-side systems.</p>
+            </div>
+            <div class="job-post">
+              <img src="https://img.freepik.com/free-vector/human-resources-concept-illustration_114360-22204.jpg?t=st=1744247167~exp=1744250767~hmac=fedd8e4e391691783dd76224cfb6896283a5087831e38fefcac0d3deff942e2d&w=826" alt="HR Specialist" class="job-image">
+              <p><strong>HR Specialist</strong></p>
+              <p>Join our HR team and help us find the best talent for our company.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+<script src="js/app.js"></script>
+</body>
+</html>
