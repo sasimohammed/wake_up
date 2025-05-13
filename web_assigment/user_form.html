@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Form Example</title>
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+
+  <!-- CSS Files -->
+  <link rel="stylesheet" href="css/user&company_form.css">
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- Notification Styles -->
+  <style>
+    .notification-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0,0,0,0.4);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 1000;
+    }
+
+    .notification-box {
+      background-color: white;
+      padding: 20px 30px;
+      border-radius: 12px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+      font-family: 'Inter', sans-serif;
+      font-size: 16px;
+      max-width: 400px;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 12px;
+      animation: pop 0.3s ease-in-out;
+    }
+
+    .notification-box.success {
+      border-left: 6px solid #28a745;
+    }
+
+    .notification-box.error {
+      border-left: 6px solid #dc3545;
+    }
+
+    .notification-box i {
+      font-size: 24px;
+    }
+
+    @keyframes pop {
+      0% { transform: scale(0.9); opacity: 0; }
+      100% { transform: scale(1); opacity: 1; }
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- Notification Layer -->
+<div id="notification-overlay" class="notification-overlay">
+  <div id="notification-box" class="notification-box">
+    <i id="notif-icon">✔️</i>
+    <span id="notif-message">This is a message</span>
+  </div>
+</div>
+
+<!-- Form Section -->
+<div class="form-container">
+  <h2 class="form-title">Sign Up</h2>
+
+  <form id="signup-form" method="POST">
+    <div class="input-group">
+      <label for="name">Full Name</label>
+      <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+    </div>
+
+    <div class="input-group">
+      <label for="email">Email Address</label>
+      <input type="email" id="email" name="email" placeholder="Enter your email" required>
+    </div>
+
+    <div class="input-group">
+      <label for="phone">Phone Number</label>
+      <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required>
+    </div>
+
+    <div class="input-group">
+      <label for="gender">Gender</label>
+      <select id="gender" name="gender">
+        <option value="male">Male</option>
+        <option value="female">Female</option>
+        <option value="other">Other</option>
+      </select>
+    </div>
+
+    <div class="input-group">
+      <label for="password">Password</label>
+      <input type="password" id="password" name="password" placeholder="Enter your password" required>
+    </div>
+
+    <div class="input-group">
+      <label for="confirm-password">Confirm Password</label>
+      <input type="password" id="confirm-password" name="confirm-password" placeholder="Confirm your password" required>
+    </div>
+
+    <button type="submit" class="submit-btn">Submit</button>
+  </form>
+
+  <div class="divider">OR</div>
+
+  <button class="google-btn">
+    <img src="img/google.png" alt="Google Logo">
+    Sign Up with Google
+  </button>
+</div>
+
+<script src="js/app.js"></script>
+
+<script>
+  const overlay = document.getElementById('notification-overlay');
+  const box = document.getElementById('notification-box');
+  const message = document.getElementById('notif-message');
+  const icon = document.getElementById('notif-icon');
+
+  function showNotification(type, msg) {
+    box.className = 'notification-box ' + type;
+    icon.textContent = type === 'success' ? '✔️' : '❌';
+    message.textContent = msg;
+    overlay.style.display = 'flex';
+    setTimeout(() => {
+      overlay.style.display = 'none';
+    }, 5000);
+  }
+
+  document.getElementById('signup-form').addEventListener('submit', function(event) {
+    event.preventDefault();
+
+    const name = document.getElementById('name').value;
+    const email = document.getElementById('email').value;
+    const phone = document.getElementById('phone').value;
+    const gender = document.getElementById('gender').value;
+    const password = document.getElementById('password').value;
+    const confirmPassword = document.getElementById('confirm-password').value;
+
+    if (password !== confirmPassword) {
+      showNotification('error', 'Passwords do not match!');
+      return;
+    }
+
+    const requestData = {
+      username: name,
+      email: email,
+      phoneNo: phone,
+      gender: gender,
+      password: password
+    };
+
+    fetch('https://jobloomm.pythonanywhere.com/register/', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(requestData)
+    })
+      .then(response => {
+        if (!response.ok) {
+          return response.json().then(err => {
+            throw new Error(err.message || 'Registration failed');
+          });
+        }
+        return response.json();
+      })
+      .then(data => {
+        showNotification('success', 'Registration successful!');
+        document.getElementById('signup-form').reset();
+      })
+      .catch(error => {
+        showNotification('error', 'Error: ' + error.message);
+      });
+  });
+</script>
+
+</body>
+</html>
