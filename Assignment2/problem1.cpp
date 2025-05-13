@@ -1,4 +1,4 @@
-#include <iostream>
+#include <bits/stdc++.h>
 using namespace std;
 
 class Stack {
@@ -103,9 +103,26 @@ int main() {
     BrowserHistory history;
     int choice;
 
+    // Load test URLs from file
+    ifstream file("urls.txt");
+    vector<string> test_urls;  // store new_urls enter by user after he use all test_urls
+    string url;
+    if (file.is_open()) {
+        while (getline(file, url)) {
+            if (!url.empty()) {
+                test_urls.push_back(url);
+            }
+        }
+        file.close();
+    } else {
+        cout << "Warning: Could not open 'urls.txt'.\n";
+    }
+
+    int test_index = 0;
+
     while (true) {
-        cout << "\n========== welcome to our program ==========\n";
-        cout << "1. Visit new URL\n";
+        cout << "\n========== Welcome to our program ==========\n";
+        cout << "1. Visit new URL (from file or manual)\n";
         cout << "2. Go back\n";
         cout << "3. Go forward\n";
         cout << "4. Show current URL\n";
@@ -114,10 +131,26 @@ int main() {
         cin >> choice;
 
         if (choice == 1) {
-            cout << "Enter URL: ";
-            string url;
-            cin >> url;
-            history.visit_URL(url);
+            if (test_index < test_urls.size()) {
+                history.visit_URL(test_urls[test_index]);
+                test_index++;
+            } else {
+                cout << "All test_URLs visited.\n";
+                cout << "Enter a new URL to visit: ";
+                string user_url;
+                cin >> user_url;
+                history.visit_URL(user_url);
+
+                // store new URL to file
+                ofstream outfile("urls.txt", ios::app);
+                if (outfile.is_open()) {
+                    outfile << user_url << endl;
+                    outfile.close();
+                    test_urls.push_back(user_url); // add to vector
+                } else {
+                    cout << "Error: Could not write to file.\n";
+                }
+            }
         }
         else if (choice == 2) {
             history.goBack();
@@ -134,7 +167,6 @@ int main() {
         }
         else {
             cout << "Invalid choice. Try again.\n";
-            continue;
         }
     }
 
