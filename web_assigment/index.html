@@ -10,12 +10,98 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bai+Jamjuree:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&family=Caveat:wght@400..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Jost:ital,wght@0,100..900;1,100..900&family=Maven+Pro:wght@400..900&family=Playwrite+HU:wght@100..400&family=Playwrite+IT+Moderna:wght@100..400&family=Playwrite+US+Modern+Guides&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-
   <link href="https://fonts.googleapis.com/css2?family=Rubik+One&display=swap" rel="stylesheet">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bai+Jamjuree:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&family=Caveat:wght@400..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Jost:ital,wght@0,100..900;1,100..900&family=Maven+Pro:wght@400..900&family=Playwrite+HU:wght@100..400&family=Playwrite+IT+Moderna:wght@100..400&family=Playwrite+US+Modern+Guides&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Rubik+Mono+One&display=swap" rel="stylesheet">
+  <script src="js/app.js"></script>
 
+  <style>
+    .dropdown-wrapper {
+      position: relative;
+      display: inline-block;
+
+    }
+
+    .sign_in {
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+      color: #333;
+      padding: 10px;
+    }
+
+    .dropdown-menu {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background-color: #ffffff;
+      border:none;
+      border-radius: 15px;
+      min-width: 120px;
+      box-shadow: 0px 8px 16px rgba(0,0,0,0.1);
+      z-index: 10;
+      flex-direction: column;
+    }
+
+    .dropdown-menu a {
+      padding: 8px 10px;
+      text-decoration: none;
+      color: #333;
+      width:70%;
+      display: block;
+      margin-left:5px;
+      margin-bottom:10px;
+      margin-top:5px;
+
+    }
+
+    .dropdown-menu a:hover {
+      background-color: #f0f0f0;
+    }
+
+    .dropdown-wrapper:hover .dropdown-menu {
+      display: flex;
+    }
+
+    #home .user_btn{
+      position:relative ;
+      overflow:hidden;
+      width:150px;
+
+
+
+    }
+
+   #home  .user_btn:before{
+      content: '';
+      position:absolute ;
+      top:0;
+      left:-100%;
+      width:100%;
+      height:100%;
+      background-color: #96BDDA;
+      transition: 0.4s;
+      z-index:10;
+    }
+
+
+    #home .btn-text{
+
+      z-index:10;
+
+    }
+
+   #home  .user_btn:hover::before {
+      left: 0;
+    }
+
+
+
+
+
+  </style>
 </head>
 <body>
 
@@ -24,99 +110,184 @@
 </div>
 <nav>
   <div class="logo">
-    <img src="img/logo.png">
+    <img src="img/img_6.png">
   </div>
 
-<div class="nav_links ">
-  <a href="#home">Home</a>
-  <a href="#about">About</a>
-  <a href="#services">Services</a>
-  <a href="#contact">Contact</a>
+  <div class="nav_links">
+    <a href="#home">
+      <i class='bx bx-home-alt'></i>
+      <span>Home</span>
+    </a>
+    <a href="#about">
+      <i class='bx bx-info-circle'></i>
+      <span>About</span>
+    </a>
+    <a href="#services">
+      <i class='bx bx-cog'></i>
+      <span>Services</span>
+    </a>
+    <a href="#contact">
+      <i class='bx bx-envelope'></i>
+      <span>Contact</span>
+    </a>
 
-  <button  class="sign_in">
-    Sign Up
-  </button>
 
-</div>
+    <div class="dropdown-wrapper">
+      <a href="user_login.html" class="sign_in">
+        <i class='bx bx-user-plus'></i>
+        <span>Log in </span>
+      </a>
+      <div class="dropdown-menu">
+        <a href="user_login.html">User</a>
+        <a href="company_form.html">Company</a>
+      </div>
+    </div>
+
+  </div>
+
+
 
 
 </nav>
 
-<section id="home" >
-<div class="hero" >
-  <img src="img/hero.png">
-  <div class="hero_text">
-    <h1>Your Next Career Move <span class="gradient-text">Starts Here</span></h1>
-    <p>Opportunities don’t wait—why should you? Discover jobs that match your skills, connect with top employers, and step into your future with confidence.</p>
-
-      <button class="join">
-        Join Us Now
-        <i class="bx bx-right-arrow-circle"></i>
-      </button>
 
 
+
+<section id="home">
+  <div class="hero">
+    <img src="img/img_5.png" alt="Career Image">
+
+    <div class="hero_text">
+      <h1>Your Next Career Move <span class="gradient-text">Starts Here</span></h1>
+      <p>Opportunities don’t wait—why should you? Discover jobs that match your skills, connect with top employers, and step into your future with confidence.</p>
+
+      <div class="hero_icons">
+        <i class='bx bx-briefcase'></i>
+        <i class='bx bx-user-check'></i>
+        <i class='bx bx-rocket'></i>
+      </div>
+
+      <a class="join user_btn">
+        <span class="btn-text">Learn More </span>
+      </a>
+
+
+
+    </div>
+
+    <div class="company-logos">
+      <img src="img/air.png" alt="Company 1">
+      <img src="img/micro.png" alt="Company 2">
+      <img src="img/bissel.png" alt="Company 3">
+    </div>
+
+    <div class="social_icons hero_icons">
+      <a href="https://facebook.com" target="_blank"><i class='bx bxl-facebook'></i></a>
+      <a href="https://linkedin.com" target="_blank"><i class='bx bxl-linkedin'></i></a>
+      <a href="https://youtube.com" target="_blank"><i class='bx bxl-youtube'></i></a>
+    </div>
+
+    <!-- "Get the App" buttons section -->
+    <div class="app-links">
+      <a href="https://play.google.com/store" target="_blank">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="Get it on Google Play" width="150">
+      </a>
+      <a href="https://www.apple.com/app-store/" target="_blank">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/3/3c/Download_on_the_App_Store_Badge.svg" alt="Download on the App Store" width="150">
+      </a>
+    </div>
   </div>
 
-
-
-
-</div>
-
+  <div class="stats">
+    <div class="stat-item">
+      <h3 data-target="10000">0</h3>
+      <p>Jobs Posted</p>
+    </div>
+    <div class="stat-item">
+      <h3 data-target="5000">0</h3>
+      <p>Companies Hiring</p>
+    </div>
+    <div class="stat-item">
+      <h3 data-target="50000">0</h3>
+      <p>Candidates Hired</p>
+    </div>
+  </div>
 
 </section>
 
+
 <section id="about" class="section">
-    <div class ="about_text">
+  <div class ="about_text">
 
-       <h1> <span class ="gradient-text">About Us</span></h1>
-        <p>At jobloop , we believe that finding the right job should be easy, inspiring, and rewarding. Our platform connects job seekers with top companies, making the hiring process seamless and efficient.
-            Whether you're a professional looking for your next big opportunity or a company searching for the perfect candidate, we’ve got you covered. With powerful search tools, easy applications, and real-time job updates, we help you take the next step in your career journey.
-            Join us today and turn opportunities into success</p>
-    
-    </div>
+    <h1> <span class ="gradient-text">About Us</span></h1>
+    <p>At jobloop , we believe that finding the right job should be easy, inspiring, and rewarding. Our platform connects job seekers with top companies, making the hiring process seamless and efficient.
+      Whether you're a professional looking for your next big opportunity or a company searching for the perfect candidate, we’ve got you covered. With powerful search tools, easy applications, and real-time job updates, we help you take the next step in your career journey.
+      Join us today and turn opportunities into success</p>
 
-    <div class="part2">
-      <div class="container">
-        <div class="items" id="box_1">
-          <h1>Fast & Simple Job Applications</h1>
-          <p>Apply to jobs in just a few clicks! Our user-friendly platform helps you find the right opportunity without the hassle.</p>
+  </div>
+
+  <div class="part2">
+    <div class="container">
+      <div class="items" id="box_1">
+        <img src="img/img_1.png">
+        <div class="text-overlay">
+          <h3>Fast & Simple Job Applications</h3>
         </div>
-        <div class="items" id="box_2">
-          <h1>Connecting Talent & Opportunities</h1>
-          <p>We bridge the gap between skilled professionals and top companies, making job searching and hiring easier than ever</p>
+      </div>
+
+      <div class="items" id="box_2">
+
+        <img src="img/img_2.png">
+        <div class="text-overlay">
+                  <h3>Connecting Talent & Opportunities</h3>
         </div>
-        <div class="items" id="box_3">
-          <h1>For Companies, By Companies</h1>
-          <p>Businesses can post, edit, and manage job listings effortlessly, ensuring they connect with the best talent.</p>
+      </div>
+      <div class="items" id="box_3">
+        <img src="img/img_3.png">
+        <div class="text-overlay">
+          <h3>Smart Job Matching</h3>
+
         </div>
-        <div class="items" id="box_4">
-          <h1>Smart Job Matching</h1>
-          <p>We personalize your job search experience, showing you opportunities that match your skills and career goals</p>
+      </div>
+      <div class="items" id="box_4">
+        <img src="img/img_4.png">
+        <div class="text-overlay">
+          <h3>For Companies, By Companies</h3>
         </div>
+
+
 
       </div>
+
     </div>
+  </div>
 
 </section>
 
 
 <section id="services" class="section">
-  <h1><span class ="gradient-text">Services</span></h1>
+  <div class="services_text">
+    <h1><span class ="gradient-text">Services</span></h1>
+    <p>At JobLoom, we connect companies with top talent and provide job seekers with exciting career opportunities. Our platform offers seamless services to businesses seeking qualified professionals, while helping individuals find their perfect job match. Whether you’re an employer looking to hire or a job seeker searching for your next opportunity, we are here to support you every step of the way</p>
+  </div>
+
   <div class="companies">
     <div class="company_1">
-      <img class="user_img" src="img/user.png" alt="user's image">
+      <img class="user_img" src="img/img_7.png" alt="user's image">
       <h1>For Job Seekers</h1>
-      <button class="join">
-        Sign Up
+      <button onclick="handleSignUp('user')" class="join user_btn">
+       Sign Up
         <i class="bx bx-right-arrow-circle"></i>
       </button>
-      
+
+
     </div>
     <div class="company_2">
       <img class="user_img" src="img/company.png" alt="company's image">
       <h1>For Companies</h1>
-      <button class="join">
-        Sign Up
+
+      <button onclick="handleSignUp('company')" class="join company_btn">
+       Sign Up
         <i class="bx bx-right-arrow-circle"></i>
       </button>
     </div>
@@ -126,78 +297,180 @@
 </section>
 
 
-<section id="contact" class="section">
-  <div class="contact_title">
-  <h1><span class ="gradient-text">Contact</span></h1>
-  <p>we are here to help you</p>
+
+<div class="card">
+  <div class="card-content">
+    <h2>Smart Retail with AI</h2>
+    <p>
+      Our AI-powered solution transforms the traditional retail experience into a smart, data-driven ecosystem. With advanced real-time analytics, retailers can now monitor customer behavior, optimize product placement, and adjust inventory instantly based on demand.
+    </p>
+    <p>
+      Personalized shopping experiences are made possible through intelligent recommendations, facial recognition systems, and customer heatmaps that help identify high-traffic areas in stores. The system also reduces operational costs by automating routine tasks and providing predictive insights to aid in strategic decision-making.
+    </p>
+
   </div>
+  <div class="card-video">
+    <video autoplay muted loop playsinline>
+      <source src="https://cdn.pixabay.com/video/2024/02/28/202277-917730453_large.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+  </div>
+</div>
 
-  <div class="all_contact">
-    <div class="contact_info">
-          <div class="contact">
-            <i class='bx bxs-phone'></i>
-            <div class="details">
-              <h2>Phone</h2>
-              <p>01025834598</p>
-            </div>
-          </div>
-          <div class="contact">
-            <i class='bx bxl-instagram'></i>
-            <div class="details">
-              <h2>Instagram</h2>
-              <p>01025834598</p>
-            </div>
 
-          </div>
-          <div class="contact">
-            <i class='bx bxl-linkedin' ></i>
-            <div class="details">
-              <h2>LinkedIn</h2>
-              <p>01025834598</p>
-            </div>
+<div class="card-upwork">
+  <div class="card-left">
+    <h2>Why businesses turn to Hob Loom</h2>
 
-          </div>
-          <div class="contact">
-            <i class='bx bxl-facebook-circle' ></i>
-            <div class="details">
-              <h2>Facebook</h2>
-              <p>01025834598</p>
-            </div>
-          </div>
-    
+    <div class="feature">
+      <h3>⭐ Proof of quality</h3>
+      <p>Check any pro’s work samples, client reviews, and identity verification.</p>
     </div>
-  <form class="contact_form">
-    <h1>Get in Touch</h1>
-    <div class="field">
-      <div class="column">
-        <label for="name">Name</label>
-        <input type="text" placeholder="John" id="name">
-      </div>
-      <div class="column">
-        <label for="last_name">Last Name</label>
-        <input type="text" placeholder="Doe" id="last_name">
-      </div>
+
+    <div class="feature">
+      <h3>💲 No cost until you hire</h3>
+      <p>Interview potential fits for your job, negotiate rates, and only pay for work you approve.</p>
+    </div>
+
+    <div class="feature">
+      <h3>✔️ Safe and secure</h3>
+      <p>Focus on your work knowing we help protect your data and privacy. 24/7 support if needed.</p>
+    </div>
+
+    <!-- Image placed at border -->
+    <img class="character" src="img/creat.png" alt="Character">
   </div>
-  <div class="column">
-    
+
+  <div class="card-right">
+    <div class="card-highlight">
+      <h3>We’re the world’s work marketplace</h3>
+      <p> 4.9/5 — Clients rate professionals on Hob Loom</p>
+    </div>
+
+    <div class="card-footer">
+      <div class="award">
+         G2’s 2021 Best Software Awards
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+<section id="team" class="section">
+  <h2><span >Meet the Team</span></h2>
+  <div class="team-container">
+    <div class="team-member">
+      <img src="https://img.freepik.com/free-photo/portrait-young-beautiful-ginger-woman-with-tender-serious-face-crossing-arms-looking-camera-isolated-pastel-blue-background-copy-space_1258-760.jpg?t=st=1744886512~exp=1744890112~hmac=fc51484dc7b2c110b6f4ab22c41fe7a317698739758de12ccf748aa5f3b5487d&w=1380" alt="Team Member">
+      <h4>Sohaila Walid</h4>
+      <p>Frontend Developer</p>
+    </div>
+
+    <div class="team-member">
+      <img src="https://img.freepik.com/free-photo/beautiful-woman-silk-jacket-smiling-pink-background_197531-15028.jpg?t=st=1744886635~exp=1744890235~hmac=8de4055aa3963359d48a45c05e235abd374ede2e83365859a19260453713bb1f&w=1380" alt="Team Member">
+      <h4>Sohaila Walid</h4>
+      <p>Frontend Developer</p>
+    </div>
+    <div class="team-member">
+      <img src="https://img.freepik.com/free-photo/happy-smiling-man-with-blond-hair-beard-looking-camera-standing-grey-t-shirt-isolated-white-background_176420-48216.jpg?t=st=1744886214~exp=1744889814~hmac=9d565945987cf93496a7c7e048d752640e2cc89a322d0e4a08a0c5f07f06b1dd&w=1380" alt="Team Member">
+      <h4>mosal Khaled</h4>
+      <p>Product Manager</p>
+    </div>
+
+
+    <div class="team-member">
+      <img src="https://img.freepik.com/premium-photo/young-arabian-handsome-man-outdoors-portrait_1368-505836.jpg?w=740" alt="Team Member">
+      <h4>Alex Khaled</h4>
+      <p>Product Manager</p>
+    </div>
+  </div>
+</section>
+
+
+
+
+
+<section id="contact" class="section">
+
+<div  class="row">
+  <div class="all_contact">
+    <div class="column">
+    <div class="contact_title">
+      <h1><span class ="gradient-text">Contact</span></h1>
+      <p>we are here to help you</p>
+    </div>
+    <div class="contact_info">
+      <div class="contact">
+        <i class='bx bxs-phone'></i>
+        <div class="details">
+          <h2>Phone</h2>
+          <p>01025834598</p>
+        </div>
+      </div>
+      <div class="contact">
+        <i class='bx bxl-instagram'></i>
+        <div class="details">
+          <h2>Instagram</h2>
+          <p>01025834598</p>
+        </div>
+
+      </div>
+      <div class="contact">
+        <i class='bx bxl-linkedin' ></i>
+        <div class="details">
+          <h2>LinkedIn</h2>
+          <p>01025834598</p>
+        </div>
+
+      </div>
+      <div class="contact">
+        <i class='bx bxl-facebook-circle' ></i>
+        <div class="details">
+          <h2>Facebook</h2>
+          <p>01025834598</p>
+        </div>
+      </div>
+    </div>
+
+    </div>
+    </div>
+    <form class="contact_form">
+      <h1 >Get in Touch</h1>
+      <div class="field">
+        <div class="column">
+          <label for="name">Name</label>
+          <input type="text" placeholder="John" id="name">
+        </div>
+        <div class="column">
+          <label for="last_name">Last Name</label>
+          <input type="text" placeholder="Doe" id="last_name">
+        </div>
+      </div>
+      <div class="column">
+
         <label for="email">Email</label>
         <input type="text" placeholder="johndoe@mail.net" id="email">
-  </div>
-  <div class="column">
-    
-    <label for="phone">Phone</label>
-    <input type="text" placeholder="+20 106 347 8352" id="phone">
-  </div>
-  <div class="column">
-    
-  <label for="description">Description</label>
-  <textarea name="description" id="description" cols="30" rows="10"></textarea>
+      </div>
+      <div class="column">
 
-  </div>
-  <button type="submit" class="submit_btn">Send Message</button>
-    
-    
-  </form>
+        <label for="phone">Phone</label>
+        <input type="text" placeholder="+20 106 347 8352" id="phone">
+      </div>
+      <div class="column">
+
+        <label for="description">Description</label>
+        <textarea name="description" id="description" cols="30" rows="10"></textarea>
+
+      </div>
+      <button type="submit" class="submit_btn">Send Message</button>
+
+
+    </form>
+
+
+
 </div>
 
 
