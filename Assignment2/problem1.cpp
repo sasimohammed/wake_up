@@ -3,15 +3,15 @@ using namespace std;
 
 class Stack {
 private:
-    string* data;   // store URLs
-    int top_index;  // top of the stack
-    int capacity;   // size of the dynamic array
+    string* data;
+    int top_index;
+    int capacity;
 
 public:
     Stack() {
-        capacity = 100;
+        capacity = 1000;
         data = new string[capacity];
-        top_index = -1; // empty stack
+        top_index = -1;
     }
 
     ~Stack() {
@@ -103,14 +103,27 @@ int main() {
     BrowserHistory history;
     int choice;
 
-    // Load test URLs from file
+
+    string* test_urls = new string[1000];
+    int test_size = 0;
+    int test_capacity = 1000;
+
+    // Load URLs from file
     ifstream file("urls.txt");
-    vector<string> test_urls;  // store new_urls enter by user after he use all test_urls
     string url;
     if (file.is_open()) {
         while (getline(file, url)) {
             if (!url.empty()) {
-                test_urls.push_back(url);
+                if (test_size == test_capacity) {
+                    test_capacity *= 2;
+                    string* new_array = new string[test_capacity];
+                    for (int i = 0; i < test_size; ++i) {
+                        new_array[i] = test_urls[i];
+                    }
+                    delete[] test_urls;
+                    test_urls = new_array;
+                }
+                test_urls[test_size++] = url;
             }
         }
         file.close();
@@ -131,25 +144,37 @@ int main() {
         cin >> choice;
 
         if (choice == 1) {
-            if (test_index < test_urls.size()) {
+            if (test_index < test_size) {
                 history.visit_URL(test_urls[test_index]);
                 test_index++;
             } else {
+                cin.ignore();
+                string user_url;
                 cout << "All test_URLs visited.\n";
                 cout << "Enter a new URL to visit: ";
-                string user_url;
-                cin >> user_url;
+                getline(cin, user_url);
                 history.visit_URL(user_url);
 
-                // store new URL to file
+                // Append to file
                 ofstream outfile("urls.txt", ios::app);
                 if (outfile.is_open()) {
                     outfile << user_url << endl;
                     outfile.close();
-                    test_urls.push_back(user_url); // add to vector
                 } else {
                     cout << "Error: Could not write to file.\n";
                 }
+
+                // Add to dynamic array
+                if (test_size == test_capacity) {
+                    test_capacity *= 2;
+                    string* new_array = new string[test_capacity];
+                    for (int i = 0; i < test_size; ++i) {
+                        new_array[i] = test_urls[i];
+                    }
+                    delete[] test_urls;
+                    test_urls = new_array;
+                }
+                test_urls[test_size++] = user_url;
             }
         }
         else if (choice == 2) {
@@ -170,5 +195,6 @@ int main() {
         }
     }
 
+    delete[] test_urls;
     return 0;
 }
