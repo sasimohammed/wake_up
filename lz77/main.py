@@ -64,10 +64,10 @@ def main():
         choice = input("Enter your choice (1-4): ").strip()
 
         if choice == '1':
-            # Compress
+           
             s = input("Enter text to compress: ")
 
-            # Ask user for window and lookahead sizes (optional)
+           
             try:
                 window_input = input("Enter window size (default = 30): ").strip()
                 lookahead_input = input("Enter lookahead buffer size (default = 40): ").strip()
@@ -90,7 +90,7 @@ def main():
                     print(f"'{token['next']}')")
 
         elif choice == '2':
-            # Decompress
+           
             print("\nEnter tokens in format: offset,length,next")
             print("Example: 0,0,A  or  5,3,B  or  10,5,EOF")
             print("Type 'done' when finished:")
@@ -122,7 +122,7 @@ def main():
                 print(f"\nDecompressed text: {decoded}")
 
         elif choice == '3':
-            # Test with samples
+         
             test_strings = [
                 "ABABABA",
                 "ABCABCABC",
@@ -149,3 +149,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
