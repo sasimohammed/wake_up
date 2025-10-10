@@ -14,7 +14,7 @@ def encode_lz77(input_string, window_size, lookahead_size):
                 continue
 
             length = 0
-            max_match = min(i - j, lookahead_size, n - i)
+            max_match = min(lookahead_size, n - i)
 
             while length < max_match and input_string[j + length] == input_string[i + length]:
                 length += 1
@@ -27,7 +27,7 @@ def encode_lz77(input_string, window_size, lookahead_size):
             out.append({'offset': 0, 'length': 0, 'next': input_string[i]})
             i += 1
         else:
-            next_char = input_string[i + best_length] if i + best_length < n else '\0'
+            next_char = input_string[i + best_length] if i + best_length < n else 'NULL'
             out.append({'offset': best_offset, 'length': best_length, 'next': next_char})
             i += best_length + 1
 
@@ -38,15 +38,14 @@ def decode_lz77(tokens):
     out = []
     for token in tokens:
         if token['offset'] == 0 and token['length'] == 0:
-            if token['next'] != '\0':
+            if token['next'] != 'NULL':
                 out.append(token['next'])
         else:
             start = len(out) - token['offset']
             for k in range(token['length']):
                 out.append(out[start + k])
-            if token['next'] != '\0':
+            if token['next'] != 'NULL':
                 out.append(token['next'])
-
     return ''.join(out)
 
 
@@ -64,10 +63,8 @@ def main():
         choice = input("Enter your choice (1-4): ").strip()
 
         if choice == '1':
-           
             s = input("Enter text to compress: ")
 
-           
             try:
                 window_input = input("Enter window size (default = 30): ").strip()
                 lookahead_input = input("Enter lookahead buffer size (default = 40): ").strip()
@@ -83,16 +80,12 @@ def main():
 
             print("\nCompressed tokens (offset, length, next):")
             for i, token in enumerate(tokens):
-                print(f"{i}: ({token['offset']}, {token['length']}, ", end="")
-                if token['next'] == '\0':
-                    print("EOF)")
-                else:
-                    print(f"'{token['next']}')")
+                next_symbol = token['next']
+                print(f"{i}: ({token['offset']}, {token['length']}, '{next_symbol}')")
 
         elif choice == '2':
-           
             print("\nEnter tokens in format: offset,length,next")
-            print("Example: 0,0,A  or  5,3,B  or  10,5,EOF")
+            print("Example: 0,0,A  or  5,3,B  or  10,5,NULL")
             print("Type 'done' when finished:")
 
             tokens = []
@@ -107,10 +100,6 @@ def main():
                         offset = int(parts[0])
                         length = int(parts[1])
                         next_char = parts[2]
-
-                        if next_char == 'EOF':
-                            next_char = '\0'
-
                         tokens.append({'offset': offset, 'length': length, 'next': next_char})
                     else:
                         print("Invalid format! Use: offset,length,next")
@@ -122,7 +111,6 @@ def main():
                 print(f"\nDecompressed text: {decoded}")
 
         elif choice == '3':
-         
             test_strings = [
                 "ABABABA",
                 "ABCABCABC",
@@ -149,4 +137,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
