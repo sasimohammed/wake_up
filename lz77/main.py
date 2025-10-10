@@ -7,13 +7,16 @@ def encode_lz77(input_string, window_size, lookahead_size):
         search_start = max(0, i - window_size)
         best_offset = 0
         best_length = 0
+        first_char = input_string[i]
 
         for j in range(search_start, i):
+            if input_string[j] != first_char:
+                continue
+
             length = 0
             max_match = min(i - j, lookahead_size, n - i)
 
-            while (length < max_match and
-                   input_string[j + length] == input_string[i + length]):
+            while length < max_match and input_string[j + length] == input_string[i + length]:
                 length += 1
 
             if length > best_length:
@@ -63,8 +66,18 @@ def main():
         if choice == '1':
             # Compress
             s = input("Enter text to compress: ")
-            WINDOW_SIZE = 30
-            LOOKAHEAD_SIZE = 40
+
+            # Ask user for window and lookahead sizes (optional)
+            try:
+                window_input = input("Enter window size (default = 30): ").strip()
+                lookahead_input = input("Enter lookahead buffer size (default = 40): ").strip()
+
+                WINDOW_SIZE = int(window_input) if window_input else 30
+                LOOKAHEAD_SIZE = int(lookahead_input) if lookahead_input else 40
+            except ValueError:
+                print("Invalid number! Using default values.")
+                WINDOW_SIZE = 30
+                LOOKAHEAD_SIZE = 40
 
             tokens = encode_lz77(s, WINDOW_SIZE, LOOKAHEAD_SIZE)
 
@@ -75,13 +88,6 @@ def main():
                     print("EOF)")
                 else:
                     print(f"'{token['next']}')")
-
-            # Show stats
-            original_size = len(s)
-            compressed_size = len(tokens)
-            ratio = (1 - compressed_size / original_size) * 100
-            print(f"\nOriginal: {original_size} chars, Compressed: {compressed_size} tokens")
-            print(f"Compression ratio: {ratio:+.1f}%")
 
         elif choice == '2':
             # Decompress
@@ -131,9 +137,7 @@ def main():
                 tokens = encode_lz77(s, 30, 40)
                 decoded = decode_lz77(tokens)
                 status = "✓ PASS" if decoded == s else "✗ FAIL"
-                ratio = (1 - len(tokens) / len(s)) * 100
-
-                print(f"'{s}' -> {len(tokens)} tokens, ratio: {ratio:+.1f}% {status}")
+                print(f"'{s}' -> {len(tokens)} tokens {status}")
 
         elif choice == '4':
             print("Goodbye!")
