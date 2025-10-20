@@ -212,6 +212,10 @@ public class Terminal {
     }
 
 
+    public void pwd() throws IOException{
+        System.out.println(currentPath);
+    }
+
     // -----------------------------
 // command selector
 // -----------------------------
@@ -231,6 +235,7 @@ public class Terminal {
             case "rmdir": rmdir(args); break;
             case "touch": touch(args); break;
             case "cp": cp(args); break;
+            case "pwd": pwd(); break;
             case "exit": System.exit(0); break;
 
             default: {

@@ -5,7 +5,7 @@ public class Parser {
     private String commandName;
     private String[] args;
 
-    private static final Set<String> VALID_COMMANDS = Set.of("zip", "unzip", ">", ">>", "wc","rmdir","touch","cp");
+    private static final Set<String> VALID_COMMANDS = Set.of("zip", "unzip", ">", ">>", "wc","rmdir","touch","cp","pwd");
 
 
     public boolean parse(String input) {
